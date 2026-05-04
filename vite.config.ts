@@ -6,6 +6,6 @@ export default defineConfig({
         sourcemap: true,
     },
     define: {
-        __DATA_PATH__: JSON.stringify(process.env.DATA_PATH || '/data/')
+        __DATA_PATH__: JSON.stringify(process.env.DATA_PATH || './data/')
     }
 });
