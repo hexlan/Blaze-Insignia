@@ -1,5 +1,4 @@
 import ServiceLocator from "./core/serviceLocator";
-import { Keys } from "./input/keyboard";
 import InputManager from "./input/inputManager";
 import Graphics, { Color } from "./graphics/graphics";
 import ContentManager from "./core/contentManager";
@@ -8,7 +7,8 @@ import GameScene from "./scenes/gameScene";
 
 ServiceLocator.getInstance().register(new InputManager());
 ServiceLocator.getInstance().register(new Graphics());
-ServiceLocator.getInstance().register(new ContentManager('../data/'))
+const DATA_ROOT = __DATA_PATH__;
+ServiceLocator.getInstance().register(new ContentManager(DATA_ROOT));
 ServiceLocator.getInstance().register(new SceneManager());
 
 const input = ServiceLocator.getInstance().get(InputManager);

@@ -5,4 +5,7 @@ export default defineConfig({
         outDir: 'dist',
         sourcemap: true,
     },
+    define: {
+        __DATA_PATH__: JSON.stringify(process.env.DATA_PATH || '/data/')
+    }
 });
